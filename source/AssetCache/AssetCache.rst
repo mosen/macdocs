@@ -1,5 +1,7 @@
-AssetCache Service
-==================
+AssetCache Service (Tethered 10.12 and 10.13 Content Caching)
+=============================================================
+
+
 
 
 Database
@@ -11,6 +13,7 @@ its persistent data at :file:`/Library/Server/Caching/Data/AssetInfo.db`.
 Logging
 -------
 
+You can filter by the subsystem ``com.apple.AssetCache`` to receive messages about the content caching service.
 
 
 Network
