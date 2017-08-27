@@ -91,3 +91,55 @@ Delete a snapshot::
 
     Deleted local snapshot '2017-08-27-004037'
 
+
+VMWare
+------
+
+Online container resize::
+
+    $ diskutil ap resizeContainer disk1 0
+
+To take all available space, this is the output::
+
+    Started APFS operation
+    Resizing APFS Container designated by APFS Container Reference disk1
+    Verifying storage system
+    Using live mode
+    Performing fsck_apfs -n -x -l /dev/disk0s2
+    Checking volume
+    Checking the container superblock
+    Checking the EFI jumpstart record
+    Checking the space manager
+    Checking the object map
+    Checking the APFS volume superblock
+    Checking the object map
+    Checking the fsroot tree
+    Checking the snapshot metadata tree
+    Checking the extent ref tree
+    Checking the snapshots
+    Checking the APFS volume superblock
+    Checking the object map
+    Checking the fsroot tree
+    Checking the snapshot metadata tree
+    Checking the extent ref tree
+    Checking the snapshots
+    Checking the APFS volume superblock
+    Checking the object map
+    Checking the fsroot tree
+    Checking the snapshot metadata tree
+    Checking the extent ref tree
+    Checking the snapshots
+    Checking the APFS volume superblock
+    Checking the object map
+    Checking the fsroot tree
+    Checking the snapshot metadata tree
+    Checking the extent ref tree
+    Checking the snapshots
+    Verifying allocated space
+    warning: Overallocation Detected on Main device: (3111618+1) bitmap address (37532)
+    The volume /dev/disk0s2 appears to be OK
+    Storage system check exit code is 0
+    Growing APFS Physical Store disk0s2 from 42,739,916,800 to 53,477,335,040 bytes
+    Modifying partition map
+    Growing APFS data structures
+    Finished APFS operation
