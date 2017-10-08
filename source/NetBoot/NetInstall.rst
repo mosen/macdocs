@@ -88,4 +88,42 @@ Keys
 
 - **ShouldErase** Should automatically erase the target
 - **Target** The mounted target disk to erase and install onto.
+- **displayCountdown** Number of seconds to display countdown
+
+Package Only Installation
+-------------------------
+
+Structural Differences
+^^^^^^^^^^^^^^^^^^^^^^
+
+A package only NetInstall image contains a completely different structure as it does not require the use of the
+Installer or the InstallESD.dmg content.
+
+- :file:`/BaseSystem.dmg` + :file:`/BaseSystem.chunklist`: The Base Operating System Environment and its chunklist.
+- :file:`/Packages`
+    - :file:`ASRInstall.pkg`: In a package-only installation, this seems to contain no payloads and no scripts.
+    - :file:`InstallPreferences.plist`: Contains a single key **packageOnlyMode** which is **TRUE**.
+    - :file:`{packageName}.pkg`: The package(s) to install.
+    - :file:`System.dmg`: A DMG which is currently zero bytes.
+    - :file:`/Extras`
+        - :file:`install.packagePath`: A file with a single line pointing to :file:`/System/Installation/Packages/ASRInstall.pkg`
+        - :file:`postRestorePackages.txt`: A file listing package(s), one per line, eg. :file:`/System/Installation/Packages/munkitools-3.1.0.3398.pkg`.
+        - :file:`postInstallPackages.sh`: A script which reads package(s) from :file:`postRestorePackages.txt`, one per line
+        and installs them using :command:`installer -pkg`.
+        - :file:`z_preserveInstallLog.sh`: A script which copies the installer log :file:`/var/log/install.log` from the NetBoot
+        environment back into the target volume in the same location.
+
+Process
+^^^^^^^
+
+- :file:`/etc/rc.install` checks for the existence of :file:`/System/Installation/Packages/Extras/install.packagePath`
+  which typically exists in a NetRestore Package Only environment.
+- Instead of running the installer, the NetRestore application :file:`/System/Installation/CDIS/NetRestore.app/Contents/MacOS/NetRestore`
+  is run.
+- Depending on whether the ``packageOnlyMode`` key is true in :file:`InstallPreferences.plist`, the NetRestore application
+  proceeds with an **InstallerOperation**. If it is false, it proceeds with the **ASROperation**.
+- **NetRestore.app** considers any executable in :file:`/Packages/Extras/postinstall`, sorted by file name, to be executed.
+
+.. note:: NetRestore may only consider shell scripts because it does check the extension.
+
 
