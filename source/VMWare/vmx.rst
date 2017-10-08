@@ -1,3 +1,5 @@
-VMWare vmx options
-==================
+VMWare .vmx options for mac
+===========================
+
+
 

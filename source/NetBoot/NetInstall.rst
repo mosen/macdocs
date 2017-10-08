@@ -1,6 +1,7 @@
 NetInstall
 ==========
 
+All of this information has been gathered from 10.13 High Sierra thus far.
 
 
 Structure of an .NBI
@@ -62,6 +63,17 @@ How SIU Provides Post-Installation Scripts
   **post_install.sh.inner.pkg**.
 - The contents of your script will be executed as the **postinstall** script.
 - The package bundle identifier is ``com.apple.SystemImageUtility.<Script name with extension>``.
+
+How SIU Binds Clients to OD/AD
+------------------------------
+
+- A payload free package, ``netInstallApplyConfigurationSettings.sh.pkg`` is created, and added to the
+  **Additional Installers** key.
+- This package begins by executing ``installClientHelper.sh`` which does the rest of the workflow.
+- This script copies a few different files to allow the machine to bind:
+    - NetBootClientHelper: The utility which helps manage the binding (this also manages host naming).
+    - bindingNames.plist: The configuration, copied to /etc which contains the domains to bind.
+    - ``com.apple.NetBootClientHelper.plist``: The launchdaemon responsible for starting ``NetBootClientHelper``
 
 minstallconfig.xml
 ------------------

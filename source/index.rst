@@ -12,8 +12,8 @@ Welcome to Mac's documentation!
 
    APFS/index
    AssetCache/index
-   NetBoot/index
-   VMWare/index
+   NetBoot/NetInstall
+   VMWare/vmx
 
 
 Indices and tables
