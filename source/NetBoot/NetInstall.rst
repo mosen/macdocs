@@ -15,7 +15,15 @@ Structure of an .NBI
     - **3rd party.pkg** 3rd party bundled pkg. I believe it needs to be a distribution style package AND signed.
       The package needs to be listed in the **InstallInfo.plist** of the installer.
 
+Boot Environment
+----------------
 
+- /dev/disk9 on /System/Installation.
+
+- :file:`/System/Installation` contains a single symbolic link item called **PackagesLink**.
+- :file:`/System/Installation/PackagesLink` points to :file:`/Volumes/Image Volume/Packages`.
+- :file:`/Volumes/Image Volume` is the root of the **NetInstall** media, therefore anything normally under
+    :file:`/System/Installation/Packages` in macOS Sierra can be made available at the root of the NetInstall.dmg.
 
 How SIU Adds Configuration Profiles
 -----------------------------------
