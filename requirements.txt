@@ -2,9 +2,11 @@ alabaster==0.7.9
 argh==0.26.2
 Babel==2.3.4
 backports-abc==0.5
-certifi==2016.9.26
+certifi==2017.11.5
+chardet==3.0.4
 docutils==0.13.1
 guzzle-sphinx-theme==0.7.11
+idna==2.6
 imagesize==0.7.1
 Jinja2==2.8
 livereload==2.5.0
@@ -21,5 +23,7 @@ snowballstemmer==1.2.1
 Sphinx==1.5
 sphinx-autobuild==0.6.0
 sphinx-rtd-theme==0.1.9
-tornado==4.4.2
+sphinxcontrib-httpdomain==1.5.0
+sphinxcontrib-websupport==1.0.1
+urllib3==1.22
 watchdog==0.8.3
