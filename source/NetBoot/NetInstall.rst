@@ -86,6 +86,10 @@ How SIU Binds Clients to OD/AD
 minstallconfig.xml
 ------------------
 
+This file configures automated installation options.
+
+The presence of this file disables the splash installer page and the language chooser.
+
 Keys
 
 - **InstallType** ``automated`` or
@@ -133,5 +137,8 @@ Process
 - **NetRestore.app** considers any executable in :file:`/Packages/Extras/postinstall`, sorted by file name, to be executed.
 
 .. note:: NetRestore may only consider shell scripts because it does check the extension.
+
+- Springboard launches InstallAssistant -AppleLanguages (en) -RunInOSIEnv
+
 
 

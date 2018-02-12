@@ -1,0 +1,8 @@
+@startuml
+(*)  --> booter
+--> kernel
+--> rc.cdrom
+-->[launchctl load -D system] launchd
+-->[via /S/L/LaunchDaemons/com.apple.install.cd] rc.install
+--> Language Chooser
+@enduml
