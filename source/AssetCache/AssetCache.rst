@@ -1,19 +1,63 @@
 AssetCache Service (Tethered 10.12 and 10.13 Content Caching)
 =============================================================
 
-
+.. contents::
 
 
 Database
 --------
 
-The database is a CoreData store defined by managed object models at :file:`/usr/libexec/AssetCache.momd`, which stores
-its persistent data at :file:`/Library/Server/Caching/Data/AssetInfo.db`.
+The database is a CoreData store defined by managed object models at :file:`/usr/libexec/AssetCache/AssetCache.momd`,
+which stores its persistent data at :file:`/Library/Server/Caching/Data/AssetInfo.db` (10.12) and
+:file:`/Library/Application Support/Apple/AssetCache/Data/AssetInfo.db` (10.13).
+
+Activation
+----------
+
+On 10.13, a flag file is used and will be present at :file:`/Library/Application Support/Apple/AssetCache/.activated`.
+
+On 10.12 with Server.app, the activation information is stored in the path indicated by this command::
+
+    $(getconf DARWIN_USER_CACHE_DIR)com.apple.AssetCacheLocatorService/diskCache.plist
 
 Logging
 -------
 
-You can filter by the subsystem ``com.apple.AssetCache`` to receive messages about the content caching service.
+10.12 Sierra w/Server.app
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Caching Logs
+    /Library/Server/Caching/Logs/Debug.log
+
+Service Start, Stop and Registration
+    /Library/Server/Caching/Logs/Service.log
+
+10.13 High Sierra
+^^^^^^^^^^^^^^^^^
+
+You can filter unified logs by the subsystem ``com.apple.AssetCache`` to receive messages about the content caching
+service.
+
+Metrics
+-------
+
+10.12 Sierra w/Server.app
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Metrics are stored in an sqlite database at :file:`/Library/Server/Caching/Logs/Metrics.sqlite`.
+
+10.13.0 - 10.13.3
+^^^^^^^^^^^^^^^^^
+
+Metrics are only logged to the Unified Logging System
+
+10.13.4 -
+^^^^^^^^^
+
+Commands
+--------
+
+
 
 
 Network
