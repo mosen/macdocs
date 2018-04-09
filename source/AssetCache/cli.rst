@@ -21,3 +21,8 @@ The Caching Service is available as part of ``Server.app``.
 
 Settings may be altered using the :command:`serveradmin settings caching` command, or through the property list located
 at `/Library/Server/Caching/Config/config.plist`.
+
+Flushing the Cache
+==================
+
+You may flush the cache using `sudo serveradmin command:caching = flushCache`
