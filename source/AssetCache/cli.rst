@@ -6,6 +6,8 @@ High Sierra 10.13
 
 Content caching can be controlled using the :manpage:`AssetCacheManagerUtil(8)` command.
 
+Preferences are located at :file:`/Library/Preferences/com.apple.AssetCache.plist`
+
 Restrictions
 ------------
 
@@ -13,6 +15,7 @@ Restrictions
 
     AssetCacheManagerUtil[1200:114934] Failed to activate built-in caching server: Error Domain=ACSMErrorDomain Code=5 "virtual machine" UserInfo={NSLocalizedDescription=virtual machine}
 
+This restriction is implemented by reading the hypervisor bit from the CPU via `sysctl`.
 
 Sierra 10.12
 ------------
@@ -25,4 +28,4 @@ at `/Library/Server/Caching/Config/config.plist`.
 Flushing the Cache
 ==================
 
-You may flush the cache using `sudo serveradmin command:caching = flushCache`
+You may flush the cache using `sudo serveradmin command caching:command = flushCache`

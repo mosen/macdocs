@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>com.apple.GEO</key>
+	<dict>
+		<key>GEOResourceManifestUpdateTimeInterval</key>
+		<integer>43200</integer>
+		<key>https://gsp-ssl.ls.apple.com/search.arpc|43</key>
+		<string>50|60</string>
+		<key>https://gsp-ssl.ls.apple.com/directions.arpc|44</key>
+		<string>50|60</string>
+		<key>LaunchFromURLDelayInSeconds</key>
+		<real>3.0</real>
+
+		<!-- rdar://problem/20699064, and again rdar://problem/22920081 -->
+		<key>AllowResumingIncompleteResourceDownloads</key>
+		<false/>
+
+		<!-- rdar://problem/23710818 -->
+		<key>CLRealTimeBudgetBytesDefault</key>
+		<integer>838860</integer>
+
+		<!-- rdar://problem/28612244 -->
+		<key>TransitDatePickerHorizonDuration</key>
+		<integer>1209600</integer>
+
+		<key>RidesharingPickupLocationZoomRadius</key>
+		<real>250.0</real>
+
+		<key>TLSSessionTicketsEnabled</key>
+		<true/>
+
+		<key>GEOSimpleTileRequesterMaxConcurrentRequests</key>
+		<integer>1000</integer>
+		<key>GEOShouldUseHTTPPipelining</key>
+		<true/>
+
+		<key>CLTrafficCrowdsourceRules</key>
+		<dict>
+			<key>Default</key>
+			<dict>
+				<key>Realtime</key>
+				<dict>
+					<key>HarvestInterval</key>
+					<real>1</real>
+					<key>HarvesterEnabled</key>
+					<true/>
+					<key>UploadInterval</key>
+					<real>120</real>
+				</dict>
+			</dict>
+		</dict>
+
+		<key>LogMsgPolicy_CompressForUsage</key>
+ 		<true/>
+		<key>LogMsgPolicy_CompressForRealtimeProbe</key>
+		<true/>
+
+		<key>MapsSuggestionsHotelImproverEnabledKey</key>
+		<false/>
+
+		<key>ThrottlePolicy.0x1000a</key>
+		<dict>
+			<key>ResetInterval</key>
+			<integer>60</integer>
+			<key>AllowedRequestsPerResetInterval</key>
+			<integer>100</integer>
+		</dict>
+		<key>ThrottlePolicy.0x20309</key>
+		<dict>
+			<key>ResetInterval</key>
+			<integer>60</integer>
+			<key>AllowedRequestsPerResetInterval</key>
+			<integer>100</integer>
+		</dict>
+
+		<key>CountryProviders</key>
+		<dict>
+			<key>JP</key>
+			<dict>
+				<key>GEODefaultMapMode</key>
+				<integer>3</integer>
+			</dict>
+			<key>RU</key>
+			<dict>
+				<key>GEOShouldSpeakWrittenAddresses</key>
+				<true/>
+				<key>GEOShouldSpeakWrittenPlaceNames</key>
+				<true/>
+				<key>ReportAProblemAddressEditIsProhibited</key>
+				<false/>
+			</dict>
+			<key>CN</key>
+			<dict>
+				<key>GEODefaultMapMode</key>
+				<integer>3</integer>
+				<key>GEOGeocoderIsEncrypted</key>
+				<false/>
+				<key>GEOAddressCorrectionEnabled</key>
+				<false/>
+				<key>GEOVoltaireSearchURLProviderID</key>
+				<integer>57879</integer>
+				<key>LocalitiesAndLandmarksSupported</key>
+				<false/>
+				<key>SupportsGlobalSearchInWeather</key>
+				<false/>
+				<!-- rdar://problem/23522824 -->
+				<key>CLRealTimeBudgetBytesDefault</key>
+				<integer>262144</integer>
+				<key>NavigationShowHeadingKey</key>
+				<true/>
+				<key>GEOShouldPassABClientMetadata</key>
+				<false/>
+				<key>GEOSimpleTileRequesterMaxConcurrentRequests</key>
+				<integer>3</integer>
+				<key>GEOShouldUseHTTPPipelining</key>
+				<false/>
+				<key>GEOShouldPassABAssignInfo</key>
+				<false/>
+			</dict>
+			<key>KR</key>
+			<dict>
+				<key>GEOAddressCorrectionEnabled</key>
+				<false/>
+				<key>GEOVoltaireResourceManifestURL</key>
+				<string>https://gspe35-kr-ssl.ls.apple.com/geo_manifest/dynamic/config%{DEVICE_QUERY}</string>
+			</dict>
+			<key>TW</key>
+			<dict>
+				<key>GEOShouldSpeakWrittenAddresses</key>
+				<true/>
+				<key>GEOShouldSpeakWrittenPlaceNames</key>
+				<true/>
+			</dict>
+			<key>TH</key>
+			<dict>
+				<key>SupportsCarIntegration</key>
+				<false/>
+			</dict>
+			<key>BR</key>
+			<dict>
+				<key>SupportsCarIntegration</key>
+				<false/>
+			</dict>
+			<key>IN</key>
+			<dict>
+				<key>SupportsCarIntegration</key>
+				<false/>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
